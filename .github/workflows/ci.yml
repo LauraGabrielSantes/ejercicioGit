@@ -1,5 +1,5 @@
 name: Integración continua
-on: push
+on: push origin HEAD
 jobs:
   compilar-y-ejecutar:
     runs-on: ubuntu-latest
