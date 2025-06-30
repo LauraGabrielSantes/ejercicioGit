@@ -1,0 +1,19 @@
+name: liberacion continua
+on:
+  release:
+    types: created
+permissions:
+  contents: write
+jobs:
+  compilar-y-liberar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+      - name: compilar codigo
+        run: gcc main.c -o main -O3
+      - name: subir el ejecutable
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: main
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
