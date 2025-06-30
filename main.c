@@ -2,5 +2,5 @@
 #include "funciones.c"
 
 int main(){
-    printf("holaaa");
+    printf("holaaa qué tal");
 }
